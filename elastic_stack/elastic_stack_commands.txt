@@ -1,0 +1,8 @@
+### run elasticsearc
+	elasticsearch.bat  (http server running at http://localhost:9200/)
+
+### run kibana
+	kibana.bat  (http server running at http://localhost:5601)
+
+### run logstash file , first go to path where .conf file is and
+logstash -f .\logstash.conf		

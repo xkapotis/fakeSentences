@@ -1,0 +1,20 @@
+### start zookeeper  
+C:\kafka\bin\windows .\zookeeper-server-start.bat ../../config/zookeeper.properties  ### windows command
+
+### start two kafka brokers (servers) into the same zookeeper to create kafka cluster  (carefull in configure files)
+C:\kafka\bin\windows .\kafka-server-start.bat ..\..\config\server.properties    ### windows command
+C:\kafka\bin\windows .\kafka-server-start.bat ..\..\config\server-1.properties  ### windows command
+
+### Create Topic
+C:\kafka\bin\windows .\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic topicname
+C:\kafka\bin\windows .\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic topicname
+
+### see available topics
+C:\kafka\bin\windows .\kafka-topics.bat --list --zookeeper localhost:2181
+
+
+### create comsumers (carefull in ports) 
+.\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic topicname--from-beginning
+.\kafka-console-consumer.bat --bootstrap-server localhost:9093 --topic topicname--from-beginning
+
+
